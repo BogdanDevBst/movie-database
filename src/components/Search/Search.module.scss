@@ -15,8 +15,8 @@ section {
   font-size: 20px;
   font-weight: 300;
   transition: 0.4s ease-out;
+}
 
-  &:focus {
-    box-shadow: 0, 0, 8px, 3px #37e4cd;
-  }
+.searchbox:focus {
+  box-shadow: 0, 0, 8px, 3px #37e4cd;
 }

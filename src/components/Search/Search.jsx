@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Search.module.scss";
 
 const Search = (props) => {
-  const { handleInput } = props;
+  const { handleInput, search } = props;
 
   return (
     <>
@@ -12,6 +12,7 @@ const Search = (props) => {
           placeholder="Search for a movie..."
           className={styles.searchbox}
           onChange={handleInput}
+          onKeyPress={search}
         />
       </section>
     </>

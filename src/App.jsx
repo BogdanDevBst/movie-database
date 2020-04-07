@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.module.scss";
+import axios from "axios";
 
 import Search from "./components/Search";
+import Results from "./components/Results";
 
 const App = () => {
   const [state, setState] = useState({
@@ -10,17 +12,17 @@ const App = () => {
     selected: {},
   });
 
-  const apiurl = "http://www.omdbapi.com/?i=tt3896198&apikey=986782ba";
+  const apiurl = "http://www.omdbapi.com/?apikey=986782ba";
 
-  let fetchedMovie;
-
-  useEffect = (event) => {
+  const search = (event) => {
     if (event.key === "Enter") {
-      fetch(apiurl + "&=" + state.s)
-        .then((result) => result.json())
-        .then((result) => (fetchedMovie = result));
-      setState();
-      console.log(result);
+      axios(apiurl + "&s=" + state.s).then(({ data }) => {
+        let results = data.Search;
+
+        setState((prevState) => {
+          return { ...prevState, results: results };
+        });
+      });
     }
   };
 
@@ -39,7 +41,8 @@ const App = () => {
           <h1>Movie database</h1>
         </header>
         <main>
-          <Search handleInput={handleInput} />
+          <Search handleInput={handleInput} search={search} />
+          <Results results={state.results} />
         </main>
       </div>
     </>
