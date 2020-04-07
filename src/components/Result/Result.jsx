@@ -9,7 +9,7 @@ const Result = (props) => {
       <div className={styles.result}>
         <h2>{result.Title}</h2>
         <h3>{result.Year}</h3>
-        {/* <img src={result.Poster} alt="" /> */}
+        <img src={result.Poster} alt="" />
       </div>
     </>
   );
