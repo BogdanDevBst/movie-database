@@ -3,6 +3,7 @@ import styles from "./Result.module.scss";
 
 const Result = (props) => {
   const { result } = props;
+
   return (
     <>
       <div className={styles.result}>

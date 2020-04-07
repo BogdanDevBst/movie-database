@@ -7,9 +7,7 @@ import Results from "./components/Results";
 
 const App = () => {
   const [state, setState] = useState({
-    s: "",
     results: [],
-    selected: {},
   });
 
   const apiurl = "http://www.omdbapi.com/?apikey=986782ba";
@@ -20,7 +18,7 @@ const App = () => {
         let results = data.Search;
 
         setState((prevState) => {
-          return { ...prevState, results: results };
+          return { ...prevState, results };
         });
       });
     }
