@@ -2,14 +2,13 @@ import React from "react";
 import styles from "./Result.module.scss";
 
 const Result = (props) => {
-  const { result } = props;
+  const { result, openPopup } = props;
 
   return (
     <>
-      <div className={styles.result}>
-        <h2>{result.Title}</h2>
-        <h3>{result.Year}</h3>
+      <div className={styles.result} onClick={() => openPopup(result.imdbID)}>
         <img src={result.Poster} alt="" />
+        <h3>{result.Title}</h3>
       </div>
     </>
   );

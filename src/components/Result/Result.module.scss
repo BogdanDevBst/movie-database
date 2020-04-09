@@ -1,31 +1,29 @@
 .result {
   width: 33.333%;
-  min-width: 300px;
+  min-width: 250px;
   padding: 15px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
 
-  img {
-    display: block;
-    width: 100%;
-  }
+.result img {
+  display: block;
+  width: 100%;
+}
 
-  h2 {
-    color: goldenrod;
-  }
+.result h3 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  background: #445565;
+  flex: 1 1 100%;
+  transition: 0.4s ease-out;
+}
 
-  h3 {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px;
-    background: #445565;
-    flex: 1 1 100%;
-    transition: 0.4s ease-out;
-
-    &:hover h3 {
-      background: #fff;
-      color: #223343;
-    }
-  }
+.result:hover h3 {
+  background: #fff;
+  color: #223343;
 }
