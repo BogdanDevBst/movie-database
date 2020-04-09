@@ -7,7 +7,7 @@ const Result = (props) => {
   return (
     <>
       <div className={styles.result} onClick={() => openPopup(result.imdbID)}>
-        <img src={result.Poster} alt="" />
+        <img src={result.Poster} alt={result.Poster} />
         <h3>{result.Title}</h3>
       </div>
     </>
